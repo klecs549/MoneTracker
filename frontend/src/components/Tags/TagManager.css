@@ -1,0 +1,262 @@
+.tag-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.tag-manager-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 80px;
+}
+
+.tag-manager-empty {
+  text-align: center;
+  padding: 40px 16px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.tag-manager-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.tag-manager-item:active {
+  opacity: 0.7;
+}
+
+.tag-manager-item-untagged {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.tag-manager-item-untagged:active {
+  opacity: 0.7;
+}
+
+.tag-manager-icon {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border-radius: 10px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.tag-manager-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+  min-width: 0;
+}
+
+.tag-manager-amount {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tag-manager-amount-positive {
+  color: var(--green);
+}
+
+.tag-manager-amount-negative {
+  color: var(--red);
+}
+
+.tag-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+
+.tag-modal {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: var(--shadow);
+}
+
+.tag-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tag-modal-title {
+  font-family: var(--heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.tag-modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.tag-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tag-modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.tag-modal-input {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-family: var(--sans);
+  color: var(--text-h);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.tag-modal-input:focus {
+  border-color: var(--accent);
+}
+
+.tag-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.tag-icon-btn {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.12s;
+  padding: 0;
+}
+
+.tag-icon-btn:active {
+  transform: scale(0.92);
+}
+
+.tag-icon-btn-active {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.tag-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.tag-modal-actions .tag-modal-save {
+  flex: 1;
+  margin-top: 0;
+}
+
+.tag-modal-save {
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.tag-modal-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tag-modal-delete {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--red);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tag-modal-delete:active {
+  background: rgba(229, 57, 53, 0.08);
+}
+
+.tag-fab {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 15;
+  transition: transform 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tag-fab:active {
+  transform: translateX(-50%) scale(0.92);
+}

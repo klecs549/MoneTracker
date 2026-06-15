@@ -1,0 +1,95 @@
+.tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.tx-list-filters {
+  display: flex;
+  gap: 6px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 4px;
+}
+
+.tx-list-filter {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tx-list-filter-active {
+  background: var(--bg);
+  color: var(--text-h);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.tx-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tx-list-state {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.tx-list-error {
+  color: var(--red);
+}
+
+.tx-list-add-btn {
+  margin-top: 12px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+}
+
+.tx-list-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.tx-list-page-btn {
+  padding: 8px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tx-list-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tx-list-page-info {
+  font-size: 13px;
+  color: var(--text);
+}

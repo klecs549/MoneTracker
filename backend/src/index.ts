@@ -3,6 +3,7 @@ import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import { db } from './db';
 import authRouter from './routes/auth';
+import analyticsRouter from './routes/analytics';
 import borrowingRouter from './routes/borrowing';
 import tagsRouter from './routes/tags';
 import transactionsRouter from './routes/transactions';
@@ -17,6 +18,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/tags', tagsRouter);
 app.use('/api/transactions', transactionsRouter);
 app.use('/api/borrowing', borrowingRouter);
+app.use('/api/analytics', analyticsRouter);
 
 app.get('/api/health', async (_req, res) => {
   try {

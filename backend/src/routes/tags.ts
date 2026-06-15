@@ -31,6 +31,12 @@ router.get('/', async (req, res) => {
   res.json({ total: total ?? '0', byTag });
 });
 
+router.get('/list', async (req, res) => {
+  const { userId } = req as AuthRequest;
+  const result = await db.select().from(tags).where(eq(tags.userId, userId));
+  res.json(result);
+});
+
 router.post('/', async (req, res) => {
   const { userId } = req as AuthRequest;
   const { name, icon } = req.body;

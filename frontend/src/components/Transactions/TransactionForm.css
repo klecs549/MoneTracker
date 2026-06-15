@@ -1,0 +1,175 @@
+.tx-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.tx-form-title {
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.tx-form-type {
+  display: flex;
+  gap: 8px;
+}
+
+.tx-form-type-btn {
+  flex: 1;
+  padding: 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tx-form-type-expense {
+  background: rgba(229, 57, 53, 0.1);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.tx-form-type-income {
+  background: rgba(67, 160, 71, 0.1);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.tx-form-amount-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 4px 16px;
+}
+
+.tx-form-currency {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.tx-form-amount {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: var(--heading);
+  color: var(--text-h);
+  outline: none;
+  padding: 12px 0;
+  min-width: 0;
+  -moz-appearance: textfield;
+}
+
+.tx-form-amount::-webkit-outer-spin-button,
+.tx-form-amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.tx-form-amount::placeholder {
+  color: var(--text);
+  opacity: 0.4;
+}
+
+.tx-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.tx-form-input,
+.tx-form-select {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-family: var(--sans);
+  color: var(--text-h);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.tx-form-input:focus,
+.tx-form-select:focus {
+  border-color: var(--accent);
+}
+
+.tx-form-error {
+  font-size: 14px;
+  color: var(--red);
+  margin: 0;
+  padding: 10px 12px;
+  background: rgba(229, 57, 53, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.tx-form-submit {
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: #fff;
+  background: var(--accent);
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: 4px;
+}
+
+.tx-form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tx-form-submit:active {
+  opacity: 0.8;
+}
+
+.tx-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.tx-form-actions .tx-form-submit {
+  flex: 1;
+  margin-top: 0;
+}
+
+.tx-form-delete {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 18px;
+  border: 1.5px solid var(--red);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--red);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tx-form-delete:active {
+  background: rgba(229, 57, 53, 0.08);
+}

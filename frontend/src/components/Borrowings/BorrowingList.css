@@ -1,0 +1,357 @@
+.borr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+  padding-bottom: 80px;
+}
+
+.borr-group-title {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px;
+}
+
+.borr-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.borr-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.borr-item:active {
+  opacity: 0.7;
+}
+
+.borr-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.borr-checkbox-awaiting {
+  border-color: var(--border);
+}
+
+.borr-checkbox-returned {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.borr-item-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.borr-item-icon-borrowed {
+  background: rgba(67, 160, 71, 0.1);
+  color: var(--green);
+}
+
+.borr-item-icon-lent {
+  background: rgba(229, 57, 53, 0.1);
+  color: var(--red);
+}
+
+.borr-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.borr-item-amount {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.borr-item-amount-borrowed {
+  color: var(--green);
+}
+
+.borr-item-amount-lent {
+  color: var(--red);
+}
+
+.borr-item-label {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.borr-item-date {
+  font-size: 11px;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.borr-state {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.borr-error {
+  color: var(--red);
+}
+
+.borr-fab {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 15;
+  transition: transform 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.borr-fab:active {
+  transform: translateX(-50%) scale(0.92);
+}
+
+.borr-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+
+.borr-modal {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: var(--shadow);
+}
+
+.borr-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.borr-modal-title {
+  font-family: var(--heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.borr-modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.borr-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.borr-modal-type {
+  display: flex;
+  gap: 8px;
+}
+
+.borr-modal-type-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.borr-modal-type-borrowed {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(67, 160, 71, 0.1);
+}
+
+.borr-modal-type-lent {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(229, 57, 53, 0.1);
+}
+
+.borr-modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.borr-modal-input {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-family: var(--sans);
+  color: var(--text-h);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.borr-modal-input:focus {
+  border-color: var(--accent);
+}
+
+.borr-modal-status {
+  display: flex;
+  gap: 8px;
+}
+
+.borr-modal-status-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.borr-modal-status-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.borr-modal-status-returned {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(67, 160, 71, 0.1);
+}
+
+.borr-modal-error {
+  font-size: 14px;
+  color: var(--red);
+  margin: 0;
+  padding: 8px 12px;
+  background: rgba(229, 57, 53, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.borr-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.borr-modal-actions .borr-modal-save {
+  flex: 1;
+  margin-top: 0;
+}
+
+.borr-modal-save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.borr-modal-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.borr-modal-delete {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--red);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.borr-modal-delete:active {
+  background: rgba(229, 57, 53, 0.08);
+}

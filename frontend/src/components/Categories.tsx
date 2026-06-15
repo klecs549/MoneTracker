@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import * as LucideIcons from 'lucide-react'
 import { getSummary, type Summary, type TagSummary } from '../api/transactions'
 import './Categories.css'
 
@@ -12,15 +13,20 @@ function formatAmount(sum: string) {
   return n < 0 ? `-$${abs}` : `+$${abs}`
 }
 
+function renderIcon(name: string | null, size = 20) {
+  if (!name) return <span>•</span>
+  const Icon = (LucideIcons as Record<string, React.ComponentType<{ size?: number }>>)[name]
+  return Icon ? <Icon size={size} /> : <span>{name}</span>
+}
+
 function TagRow({ tag }: { tag: TagSummary }) {
   const name = tag.tagName ?? 'Uncategorized'
-  const icon = tag.tagIcon ?? '•'
   const amount = formatAmount(tag.sum)
   const isExpense = parseFloat(tag.sum) < 0
 
   return (
     <div className="cat-row">
-      <div className="cat-icon">{icon}</div>
+      <div className="cat-icon">{renderIcon(tag.tagIcon)}</div>
       <span className="cat-name">{name}</span>
       <span className={`cat-amount ${isExpense ? 'expense' : 'income'}`}>
         {amount}
