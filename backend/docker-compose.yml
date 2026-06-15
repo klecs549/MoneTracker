@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: moneytrack_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-moneytrack}
+      POSTGRES_USER: ${POSTGRES_USER:-moneytrack}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-moneytrack_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-moneytrack} -d ${POSTGRES_DB:-moneytrack}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: moneytrack_backend
+    ports:
+      - "3001:3000"
+    env_file:
+      - ../.env
+    depends_on:
+      db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+        - action: rebuild
+          path: package.json
+
+volumes:
+  postgres_data:

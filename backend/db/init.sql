@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    mail VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS tags (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    name VARCHAR(255) NOT NULL,
+    icon VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS transactions (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    tag_id INTEGER REFERENCES tags(id) ON DELETE SET NULL,
+    amount NUMERIC(10, 2) NOT NULL,
+    note TEXT,
+    date TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+DO $$ BEGIN
+  CREATE TYPE borrowing_status AS ENUM ('awaiting', 'returned');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+
+CREATE TABLE IF NOT EXISTS borrowing (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    amount NUMERIC(10, 2) NOT NULL,
+    date TIMESTAMP NOT NULL DEFAULT NOW(),
+    return_date TIMESTAMP,
+    status borrowing_status NOT NULL DEFAULT 'awaiting'
+);

@@ -1,0 +1,122 @@
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0 0 4px;
+  color: var(--text-h);
+}
+
+.auth-subtitle {
+  font-size: 15px;
+  color: var(--text);
+  margin: 0 0 28px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.auth-input {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: var(--sans);
+  color: var(--text-h);
+  background: var(--bg);
+  transition: border-color 0.15s;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.auth-input::placeholder {
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.auth-input:focus {
+  border-color: var(--accent);
+}
+
+.auth-error {
+  font-size: 14px;
+  color: #e53935;
+  margin: 0;
+  padding: 10px 12px;
+  background: rgba(229, 57, 53, 0.08);
+  border-radius: 8px;
+}
+
+.auth-btn {
+  margin-top: 4px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: #fff;
+  background: var(--accent);
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.auth-btn:active {
+  transform: scale(0.98);
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-switch {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text);
+  text-align: center;
+}
+
+.auth-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-family: var(--sans);
+  color: var(--accent);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .auth-error {
+    color: #ef9a9a;
+    background: rgba(239, 154, 154, 0.1);
+  }
+}

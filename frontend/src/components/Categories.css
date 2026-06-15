@@ -1,0 +1,108 @@
+.cat-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  background: var(--code-bg);
+  border-radius: 14px;
+  margin-bottom: 4px;
+}
+
+.cat-header-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cat-header-amount {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.cat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cat-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  transition: background 0.15s;
+}
+
+.cat-row:active {
+  background: var(--code-bg);
+}
+
+.cat-icon {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--code-bg);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.cat-name {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.cat-amount {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.expense {
+  color: #e53935;
+}
+
+.income {
+  color: #43a047;
+}
+
+.cat-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.cat-error-state {
+  color: #e53935;
+}
+
+@media (prefers-color-scheme: dark) {
+  .expense {
+    color: #ef9a9a;
+  }
+  .income {
+    color: #a5d6a7;
+  }
+}
