@@ -55,18 +55,6 @@ Response `200`:
 { "token": "<jwt>" }
 ```
 
----
-
-#### Logout
-```
-POST /api/auth/logout
-```
-Protected. JWTs are stateless — the server cannot invalidate a token. After calling this endpoint the client must delete the token from storage. The token expires naturally after 7 days.
-
-Response `200`:
-```json
-{ "message": "Logged out" }
-```
 
 ---
 
@@ -102,6 +90,22 @@ Response `200`:
 }
 ```
 Negative = net expense, positive = net income.
+
+---
+
+#### List all tags
+```
+GET /api/tags/list
+```
+Protected. Returns all tags for the authenticated user (without spending sums).
+
+Response `200`:
+```json
+[
+  { "id": 1, "userId": 1, "name": "Food", "icon": "🍔" },
+  { "id": 2, "userId": 1, "name": "Rent", "icon": "🏠" }
+]
+```
 
 ---
 
@@ -271,6 +275,55 @@ Protected.
 Response `200`:
 ```json
 { "message": "Deleted" }
+```
+
+---
+
+### Analytics
+
+#### Spending over time
+```
+GET /api/analytics/spending-over-time
+```
+Protected. Returns income and expense totals grouped by time period.
+
+Query params:
+| Param | Example | Description |
+|-------|---------|-------------|
+| `period` | `?period=week` | `week` (7 days), `month` (30 days, default), or `year` (12 months) |
+
+Response `200`:
+```json
+{
+  "period": "month",
+  "format": "day",
+  "data": [
+    { "label": "2026-06-01T00:00:00.000Z", "income": "500.00", "expense": "320.50" },
+    { "label": "2026-06-02T00:00:00.000Z", "income": "0.00", "expense": "45.00" }
+  ]
+}
+```
+- `format`: `"day"` (for week/month periods) or `"month"` (for year period)
+- `income`/`expense`: string amounts, always positive
+
+---
+
+### Health
+
+#### Health check
+```
+GET /api/health
+```
+Unprotected. Returns database connection status.
+
+Response `200`:
+```json
+{ "status": "ok", "database": "connected" }
+```
+
+Response `503`:
+```json
+{ "status": "error", "database": "disconnected" }
 ```
 
 ---

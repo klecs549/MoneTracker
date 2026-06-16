@@ -97,6 +97,14 @@
           }
         },
         {
+          "name": "List All Tags",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{base_url}}/api/tags/list"
+          }
+        },
+        {
           "name": "Create Tag",
           "request": {
             "method": "POST",
@@ -254,6 +262,26 @@
           "request": {
             "method": "GET",
             "url": "{{base_url}}/api/health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Spending Over Time",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{base_url}}/api/analytics/spending-over-time?period=month",
+              "host": ["{{base_url}}"],
+              "path": ["api", "analytics", "spending-over-time"],
+              "query": [
+                { "key": "period", "value": "month", "description": "week, month (default), or year" }
+              ]
+            }
           }
         }
       ]

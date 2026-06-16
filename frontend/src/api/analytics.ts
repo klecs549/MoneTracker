@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-const BASE = import.meta.env.VITE_BACKEND_URL
+const BASE = import.meta.env.BACKEND_URL
 
 function authHeaders() {
   const token = localStorage.getItem('token')

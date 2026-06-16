@@ -44,10 +44,6 @@ router.post('/login', async (req, res) => {
   res.json({ token: signToken(user.id) });
 });
 
-router.post('/logout', authenticate, (_req, res) => {
-  // JWT is stateless — instruct the client to delete the token from storage.
-  res.json({ message: 'Logged out' });
-});
 
 router.delete('/account', authenticate, async (req, res) => {
   const { userId } = req as AuthRequest;

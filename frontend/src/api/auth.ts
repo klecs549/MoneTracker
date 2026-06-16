@@ -1,4 +1,4 @@
-const BASE = import.meta.env.VITE_BACKEND_URL
+const BASE = import.meta.env.BACKEND_URL
 
 async function request<T>(path: string, options: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, options)
