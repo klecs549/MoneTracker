@@ -131,15 +131,15 @@ function BorrowingGroup({ items, title, onEdit, onStatusToggle }: BorrowingGroup
         return (
           <div key={b.id} className="borr-item" onClick={() => onEdit(b)}>
             <div className={`borr-item-icon ${isBorrowed ? 'borr-item-icon-borrowed' : 'borr-item-icon-lent'}`}>
-              {isBorrowed ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
+              {isBorrowed ?  <ArrowDownRight size={16} /> : <ArrowUpRight size={16} />}
             </div>
             <div className="borr-item-info">
               <span className={`borr-item-amount ${isBorrowed ? 'borr-item-amount-borrowed' : 'borr-item-amount-lent'}`}>
-                {isBorrowed ? '+' : '-'}${Math.abs(amt).toFixed(2)}
+                ${Math.abs(amt).toFixed(2)}
               </span>
               <span className="borr-item-label">{isBorrowed ? 'I borrowed' : 'I lent'}</span>
             </div>
-            <div className="borr-item-date">{b.returnDate ? ("Return to " + new Date(b.returnDate).toLocaleDateString()) : 'No time limit'}</div>
+            <div className="borr-item-date">{b.returnDate ? ("Return date: " + new Date(b.returnDate).toLocaleDateString()) : 'No time limit'}</div>
             <div
               className={`borr-checkbox ${isReturned ? 'borr-checkbox-returned' : 'borr-checkbox-awaiting'}`}
               onClick={(e) => { e.stopPropagation(); onStatusToggle(b) }}

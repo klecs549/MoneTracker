@@ -72,13 +72,13 @@
 }
 
 .borr-item-icon-borrowed {
-  background: rgba(67, 160, 71, 0.1);
-  color: var(--green);
+  background: rgba(229, 57, 53, 0.1);
+  color: var(--red);
 }
 
 .borr-item-icon-lent {
-  background: rgba(229, 57, 53, 0.1);
-  color: var(--red);
+  background: rgba(67, 160, 71, 0.1);
+  color: var(--green);
 }
 
 .borr-item-info {
@@ -95,11 +95,11 @@
 }
 
 .borr-item-amount-borrowed {
-  color: var(--green);
+  color: var(--red);
 }
 
 .borr-item-amount-lent {
-  color: var(--red);
+  color: var(--green);
 }
 
 .borr-item-label {
@@ -227,15 +227,15 @@
 }
 
 .borr-modal-type-borrowed {
-  border-color: var(--green);
-  color: var(--green);
-  background: rgba(67, 160, 71, 0.1);
-}
-
-.borr-modal-type-lent {
   border-color: var(--red);
   color: var(--red);
   background: rgba(229, 57, 53, 0.1);
+}
+
+.borr-modal-type-lent {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(67, 160, 71, 0.1);
 }
 
 .borr-modal-label {

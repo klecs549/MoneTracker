@@ -45,7 +45,7 @@ function TagModal({ initial, onClose, onSave, onDelete }: TagModalProps) {
     <div className="tag-modal-overlay" onClick={onClose}>
       <div className="tag-modal" onClick={(e) => e.stopPropagation()}>
         <div className="tag-modal-header">
-          <h3 className="tag-modal-title">{initial ? 'Edit Tag' : 'New Tag'}</h3>
+          <h3 className="tag-modal-title">{initial ? 'Edit Category' : 'New Category'}</h3>
           <button className="tag-modal-close" onClick={onClose}><X size={18} /></button>
         </div>
         <form onSubmit={handleSubmit} className="tag-modal-form">
@@ -134,16 +134,16 @@ export default function TagManager() {
           )
         })}
         {untaggedTotal && (
-          <div key="untagged" className="tag-manager-item tag-manager-item-untagged">
+          <div key="untagged" className="tag-manager-item">
             <div className="tag-manager-icon"></div>
-            <span className="tag-manager-name">Untagged</span>
+            <span className="tag-manager-name">Uncategorized</span>
             <span className={`tag-manager-amount ${parseFloat(untaggedTotal) >= 0 ? 'tag-manager-amount-positive' : 'tag-manager-amount-negative'}`}>
               {parseFloat(untaggedTotal) >= 0 ? '+' : '-'}${Math.abs(parseFloat(untaggedTotal)).toFixed(2)}
             </span>
           </div>
         )}
         {!tags?.length && !untaggedTotal && (
-          <div className="tag-manager-empty">No tags yet. Create one to organize your transactions.</div>
+          <div className="tag-manager-empty">No categories yet. Create one to organize your transactions.</div>
         )}
       </div>
 

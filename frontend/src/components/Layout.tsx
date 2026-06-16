@@ -56,7 +56,7 @@ export default function Layout() {
         </NavLink>
         <NavLink to="/tags" className="bottom-nav-link">
           <Tag size={22} />
-          <span>Tags</span>
+          <span>Categories</span>
         </NavLink>
         <NavLink to="/borrowings" className="bottom-nav-link">
           <Wallet size={22} />
